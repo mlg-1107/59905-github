@@ -1,0 +1,108 @@
+/* unidades de medida */
+
+/* las dos son unidades relativas */
+/* rem, 1 rem = 16px 
+
+div{
+    font-size: 7px;
+}
+
+h1{
+    font-size: 2em;
+}
+h2{
+    font-size: 2rem;
+}
+
+*/
+/* em */
+
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* estilos generales */
+
+body{
+    background-color: #0E0D0D;
+}
+
+/* estilos de mobile */
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header nav ul{
+    color: whitesmoke;
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    padding-right: 20px;
+}
+
+/* estilos de main */
+
+main{
+    height: 70vh;
+    margin: 30px 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-tmplate-rows: repeat(3,23%);
+    row-gap: 1.5rem;
+    align-content: center;
+}
+
+main div img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} 
+
+
+main .img-dos, main .img-cinco{
+    display: none;
+}
+
+/* estilos de footer */
+footer{
+    text-align: center;
+    color: whitesmoke;
+}
+
+/* estilos de tablet */
+@media screen and (min-with:600px){
+    /* estilos de main */
+    main{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 50%) ;
+        column-gap: 1.5rem;
+         }
+     main .img-cuatro{
+        grid-column: span 2;
+     }    
+    }
+
+    /* estilos de desktop */
+    @media screen and (min-with: 1024px){
+        main .img-dos, main .img-cinco{
+            display: block;
+        }
+        main{
+            grid-template-columns: repeat(3,1fr);
+            grid-auto-rows: 30% 30% 20%;
+        }
+        main .img-uno, main .img-tres{
+            grid-row: span 2;
+        }
+        main .img-dos, main .img-cuatro{
+            grid-column: span 1;
+        }
+
+        main .img-cinco{
+            grid-column: span 3;
+        }
+    }
